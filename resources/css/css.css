@@ -1,0 +1,138 @@
+@charset "utf-8";
+/* CSS Document */
+body {
+	margin-left: 0px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	background-image: url(../images/bjt.jpg);
+}
+
+.p12hei {
+	font-family: "宋体";
+	font-size: 12px;
+	color: #333;
+	line-height: 24px;
+}
+
+.p12bai {
+	color: #FFF;
+	font-family: "宋体";
+	font-size: 12px;
+	font-weight: bold;
+	line-height: 48px;
+}
+
+.p14hong {
+	font-size: 12px;
+	font-family: "宋体";
+	font-weight: bold;
+/* 	color: #E9655C; */
+	line-height: 25px;
+	color: #0362b2;
+    font-weight: bold;
+}
+
+.p12xibai {
+	color: #FFF;
+	font-family: "宋体";
+	font-size: 12px;
+	line-height: 25px;
+}
+
+.p18biaoti {
+	font-size: 28px;
+	font-family: "微软雅黑";
+	color: #F60;
+	line-height: 35px;
+	font-weight: bold;
+}
+
+.p12hei2 {
+	font-family: "宋体";
+	font-size: 12px;
+	color: #333;
+	line-height: 28px;
+}
+
+.p214huang {
+	color: #f3820c;
+	font-size: 12px;
+	font-family: "微软雅黑";
+	font-weight: bold;
+	line-height: 28px;
+}
+
+.p14cuohuong {
+	font-family: "宋体";
+	font-family: "宋体";
+	font-size: 14px;
+	color: #900;
+	line-height: 25px;
+	font-weight: bold;
+}
+
+.p12hong {
+	font-size: 12px;
+	font-family: "微软雅黑";
+	font-weight: bold;
+/* 	color: #f02111; */
+	line-height: 22px;
+	color: #0362b2;
+    font-weight: bold;
+}
+
+.p12zihong {
+	font-size: 12px;
+	font-family: "宋体";
+	line-height: 28px;
+	color: #AB405C;
+}
+
+.p12rl {
+	font-size: 12px;
+	font-family: "微软雅黑";
+	line-height: 28px;
+	color: #AB405C;
+}
+
+.p12lv {
+	font-size: 12px;
+	font-family: "微软雅黑";
+	line-height: 28px;
+	font-weight: bold;
+	color: #4A963B;
+}
+
+.p12hei a {
+	font-family: "宋体";
+	font-size: 12px;
+	color: #333;
+	line-height: 24px;
+}
+
+a {
+	font-family: "宋体";
+	font-size: 12px;
+	color: #333;
+	line-height: 48px;
+	TEXT-DECORATION: none;
+	
+}
+
+a:visited {
+	font-family: "宋体";
+	font-size: 12px;
+	color: #333;
+	line-height: 24px;
+}
+.table1 td {
+    border: none;
+    height: 34px;
+    border: 1px solid #c1c1c1;
+    line-height: 34px;
+    text-align: center;
+}
+.pager a{
+	font-size:14px;
+}

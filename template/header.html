@@ -1,0 +1,91 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>内蒙古人防办信息报送系统</title>
+<link href="{{RES_PATH}}resources/css/css.css" rel="stylesheet"
+	type="text/css" />
+<style type="text/css">
+.pager {
+	list-style-type: none;
+	text-align: center;
+}
+
+.pager li {
+	float: left;
+}
+
+body {
+	font-size: 12px;
+	margin: 0px auto;
+	padding: 0px;
+	font-family: "宋体", "黑体" ，Microsoft YaHe;
+	background: url(resources/images/bjt.jpg) no-repeat center top;
+	background-color: #ffffff;
+}
+</style>
+</head>
+
+<body>
+	<table width="1002" border="0" align="center" cellpadding="0"
+		cellspacing="0" style="margin-top: 175px;">
+		<tr>
+			<td><table width="1002" border="0" cellspacing="0"
+					cellpadding="0">
+					<tr>
+						<td width="15"><img
+							src="{{RES_PATH}}resources/images/zbl.jpg" width="15" height="48"></td>
+						<td style="background: url({{RES_PATH}}resources/images/zjl.jpg);"><table
+								width="971" border="0" cellspacing="0" cellpadding="0">
+								<tbody>
+									<tr>
+										<td height="48"
+											style="background: url(images/bsxt_mn_line.jpg) no-repeat right"
+											align="center"><a href="{{dv.url("
+											index","index")}}" style="color: white; font-size: 14px; color: #ffffff; font-weight: bold;">首页</a></td>
+										<td
+											style="background: url(resources/images/bsxt_mn_line.jpg) no-repeat right"
+											align="center"><a href="{{dv.url("
+											xfile","add")}}" style="color: white; font-size: 14px; color: #ffffff; font-weight: bold;">添加信息</a>
+										</td>
+										<td
+											style="background: url(resources/images/bsxt_mn_line.jpg) no-repeat right"
+											align="center"><a href="{{dv.url("
+											xfile","index")}}" style="color: white; font-size: 14px; color: #ffffff; font-weight: bold;">查看信息</a></td>
+										<td
+											style="background: url(resources/images/bsxt_mn_line.jpg) no-repeat right"
+											align="center"><a href="{{dv.url("
+											xfile","xiafawenjian")}}" style="color: white; font-size: 14px; color: #ffffff; font-weight: bold;">查看下发文件</a></td>
+										<td
+											style="background: url(resources/images/bsxt_mn_line.jpg) no-repeat right"
+											align="center"><a href="{{dv.url("
+											search","search")}}" style="color: white; font-size: 14px; color: #ffffff; font-weight: bold;">搜索信息</a></td>
+										<td
+											style="background: url(resources/images/bsxt_mn_line.jpg) no-repeat right"
+											align="center"><a href="{{dv.url("
+											summery","index")}}" style="color: white; font-size: 14px; color: #ffffff; font-weight: bold;">统计信息</a></td> {% if
+										login.group_id == 1%}
+										<td
+											style="background: url(resources/images/bsxt_mn_line.jpg) no-repeat right"
+											align="center"><a href="{{dv.url("
+											user","index")}}" style="color: white; font-size: 14px; color: #ffffff; font-weight: bold;">用户管理</a></td>
+										<td
+											style="background: url(resources/images/bsxt_mn_line.jpg) no-repeat right"
+											align="center"><a href="{{dv.url("
+											department","index")}}" style="color: white; font-size: 14px; color: #ffffff; font-weight: bold;">部门管理</a></td>
+										{%endif%}
+										<td align="center"><a href="{{dv.url("
+											index","logout")}}" style="color: white; font-size: 14px; color: #ffffff; font-weight: bold;">退出系统</a></td>
+									</tr>
+								</tbody>
+							</table></td>
+						<td width="13"><img
+							src="{{RES_PATH}}resources/images/ybl.jpg" width="13" height="48"></td>
+					</tr>
+				</table></td>
+		</tr>
+
+		<tr>
+			<td align="center" valign="middle"
+							style="background: url({{RES_PATH}}resources/images/zjj.jpg) no-repeat top; border: 1px solid #0a5cab; border-top: none; background-color: #ffffff; padding-top: 20px;">
+			 <div style="min-height:560px;">

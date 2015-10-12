@@ -1,0 +1,117 @@
+{%extends "base.html"%} {%block content%}
+
+
+<table width="500" border="0" cellspacing="0" cellpadding="0">
+	<tr>
+		<td height="36" align="center" style="background: #f2f2f2;"
+			class="p14cuohuong">部门管理</td>
+	</tr>
+</table>
+<!--  
+<table width="500" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td height="36" align="center" bgcolor="#ffd3d3" class="p14cuohuong">
+                 <a href="{{dv.url("department","add")}}" class="p14cuohuong" style="color: #900;">添  加  部  门</a>                     
+            </td>
+          </tr>
+        </table>  
+        -->
+<table width="500" border="0" cellspacing="0" cellpadding="0"
+	style="border: 1px #999 dashed;">
+	<tr>
+		<td height="32" align="center" class="p12hong"
+			style="border-bottom: 1px #999 dashed; border-right: 1px #CCC dashed;">所属部门
+		</td>
+		<td align="center" class="p12hong"
+			style="border-bottom: 1px #999 dashed; border-right: 1px #CCC dashed;">操作</td>
+	</tr>
+	{%for d in data %}
+	<tr>
+		<td align="center" class="p12hei2"
+			style="border-bottom: 1px #999 dashed; border-right: 1px #CCC dashed;">
+			{{d.name}}</td>
+		<td align="center" class="p12hei2"
+			style="border-bottom: 1px #999 dashed; border-right: 1px #CCC dashed;"><table
+				width="100" border="0" cellspacing="0" cellpadding="0">
+				<tr>
+					<td align="center" class="p12rl"><a href="{{dv.url("department","edit",{'id':d.id})}}">修改</a></td>
+					<td align="center" class="p12rl"><a href="{{dv.url("department","delete",{'id':d.id})}}">删除</a></td>
+				</tr>
+			</table></td>
+	</tr>
+
+
+	{%endfor%}
+
+	<tr>
+		<td align="center" class="p12hei2"
+			style="border-bottom: 1px #999 dashed; border-right: 1px #CCC dashed;"
+			colspan="2">
+			<ul class="pager">{{page|raw}}
+			</ul>
+		</td>
+	</tr>
+</table>
+
+<!--
+<TABLE class=tablelrb border=0 cellSpacing=0 cellPadding=0 width=850 
+align=center>
+  <TBODY>
+  <TR>
+    <TD>
+      <TABLE border=0 cellSpacing=0 cellPadding=0 width="80%">
+        <TBODY>
+        <TR>
+          <TD class=fontsize10>　</TD></TR></TBODY></TABLE>
+      <TABLE border=0 cellSpacing=0 cellPadding=0 width="80%">
+        <TBODY>
+        <TR>
+          <TD class=fontsize05>　</TD></TR></TBODY></TABLE>
+      <TABLE border=0 cellSpacing=0 cellPadding=0 width=740 align=center>
+        <TBODY>
+        <TR>
+          <TD vAlign=top>
+            <FORM method=post name=form2 
+action=admin_system.asp?doing=in_bumeng>
+            <TABLE border=1 cellSpacing=0 borderColorLight=#000000 
+            borderColorDark=#ffffff cellPadding=2 width="100%" align=center>
+              <TBODY>
+              <TR>
+                <TD class=fontsize16 height=40 colSpan=2>
+                  <DIV align=center><STRONG>用户组管理（部门添加）</STRONG></DIV></TD></TR>
+
+              {%for d in data %}
+              <TR>
+                <TD height=26>
+                  <DIV class=fontsize14 align=center>{{d.name}}</DIV></TD>
+                <TD>
+                  <DIV align=center><a href="{{dv.url("department","edit",{'id':d.id})}}">修改</a> <a href="{{dv.url("department","delete",{'id':d.id})}}">删除</a></DIV></TD></TR>              
+              {%endfor%}
+
+
+<TABLE border=1 cellSpacing=0 borderColorLight=#000000 
+            borderColorDark=#ffffff cellPadding=2 width=830 align=center>
+              <TBODY>
+              <TR>
+                <TD height=30 width=830 colSpan=2>
+                  <DIV class=fontsize16 align=center>
+                  <P class=fontsize14>
+                  	
+                  							<ul class="pager">							
+							{{page|raw}}
+							<li class="separator">...</li>							
+						</ul>
+                  </P></DIV></TD></TR></TBODY></TABLE>              
+
+
+
+</TBODY></TABLE></FORM></TD></TR></TBODY></TABLE>
+
+-->
+
+
+
+
+
+
+{%endblock%}

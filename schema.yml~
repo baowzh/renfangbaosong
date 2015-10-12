@@ -1,0 +1,158 @@
+XFile:
+  connection: doctrine
+  tableName: xfile
+  columns:
+    id:
+      type: integer
+      primary: true
+      autoincrement: true
+    title:
+      type: string(200)
+    content:
+      type: text(5000)
+    post_time:
+      type: datetime
+    update_time:
+      type: datetime
+    author:
+      type: string(200)
+    sendto:
+      type: string(500)
+    department_id:
+      type: integer
+  relations:
+    Department:
+      type: one
+      local: department_id
+      foreign: id    
+  options:
+    type: INNODB
+    collate: utf8_unicode_ci
+    charset: utf8
+    
+AcceptType:
+  connection: doctrine
+  tableName: accepttype
+  columns:
+    id:
+      type: integer
+      primary: true
+      autoincrement: true
+    name:
+      type: string
+    atype:
+      type: integer(2)  #1为本地采用 2为上级采用
+  options:
+    type: INNODB
+    collate: utf8_unicode_ci
+    charset: utf8
+
+    
+FileAccept:
+  connection: doctrine
+  tableName: fileaccept
+  columns:
+    id:
+      type: integer
+      primary: true
+      autoincrement: true
+    xfile_id:
+      type: integer
+    cms_catid:
+      type: integer
+    accept_typeid:
+      type: integer
+    accept_time:
+      type: datetime
+  relations:
+    AcceptType:
+      local: accept_typeid
+      foreign: id
+      type: one
+    XFile:
+      local: xfile_id
+      foreign: id
+      type: one
+  options:
+    type: INNODB
+    collate: utf8_unicode_ci
+    charset: utf8
+    
+      
+
+
+Department:
+  connection: doctrine
+  tableName: department
+  columns:
+    id:
+      type: integer(20)
+      primary: true
+      autoincrement: true
+    name:
+      type: string(200)
+  relations:
+    User:
+      local: id
+      foreign: department_id
+      type: many
+  options:
+    type: INNODB
+    collate: utf8_unicode_ci
+    charset: utf8
+
+Group:
+  connection: doctrine
+  tableName: usersgroup
+  columns:
+    id:
+      type: integer(10)
+      primary: true
+      autoincrement: true
+    name:
+      type: string(100)
+  relations:
+    User:
+      local: id
+      foreign: group_id
+      type: many
+  options:
+    type: INNODB
+    collate: utf8_unicode_ci
+    charset: utf8
+      
+
+User:
+  connection: doctrine
+  tableName: user
+  columns:
+    id:
+      type: integer(10)
+      primary: true
+      autoincrement: true
+    username:
+      type: string(100)
+    password:
+      type: string(100)
+      length: 100
+    role:
+      type: text(5000)
+    group_id:
+      type: integer(10)
+    department_id:
+      type: integer(10)
+    lastlogin:
+      type: datetime
+  relations:
+    Department:
+      local: department_id
+      foreign: id
+      type: one
+    Group:
+      local: group_id
+      foreign: id
+      type: one
+  options:
+    type: INNODB
+    collate: utf8_unicode_ci
+    charset: utf8

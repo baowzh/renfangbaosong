@@ -1,0 +1,52 @@
+{%extends "base.html"%}
+
+{%block content%}
+<div id="content">
+	<div class="box"> 
+		<!-- box / title -->
+		<div class="title">
+			<h5>采用操作</h5>
+		</div>
+		<!-- end box / title -->
+		<form id="form" action="" method="post">
+			<div class="form">				
+				<div class="fields">
+				    <div class="field">
+						<div class="none">
+							<label for="accepttype">采用文件的名称</label>
+						</div>
+						<div class="none">
+							<label><h2 style="border:none;">{{data.title}}</h2></label>
+							<input type="hidden" value="{{data.id}}" name="data_id"/>
+						</div>
+					</div>
+					<div class="field">
+						<div class="label">
+							<label for="select">自动发布到网站（选择网站分类）</label>
+						</div>
+						<div class="none">
+							<select id="select" name="cmscatid">
+								{%for t in cmstypes%}
+								<option value="{{t.catid}}">
+								{% if t.child == 0%}
+									&nbsp;&nbsp;&nbsp;&nbsp;{{t.catname}}
+								{% else%}
+									{{t.catname}}
+								{% endif%}								
+								</option>
+								{%endfor%}
+							</select>
+						</div>
+					</div>
+					<div class="buttons">
+						<div class="highlight">
+							<input type="submit" name="submit" value="提交" class="ui-button ui-widget ui-state-default ui-corner-all" role="button" aria-disabled="false">
+						</div>
+						<input type="reset" name="reset" value="重置" class="ui-button ui-widget ui-state-default ui-corner-all" role="button" aria-disabled="false">
+					</div>
+				</div>
+			</div>
+		</form>
+	</div>
+</div>
+{%endblock%} 

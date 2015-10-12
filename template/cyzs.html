@@ -1,0 +1,32 @@
+{%extends "base.html"%}
+
+{%block content%}
+
+
+<table width="500" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td height="36" align="center" bgcolor="#ffd3d3" class="p14cuohuong">采用总数排行</td>
+          </tr>
+        </table> 
+          <table width="500" border="0" cellspacing="0" cellpadding="0" style="border:1px #999 dashed;">
+          <tr>
+            <td height="32" align="center" class="p12hong" style="border-bottom:1px #999 dashed; border-right:1px #CCC dashed;">所属部门 </td>
+            <td align="center" class="p12hong"  style="border-bottom:1px #999 dashed;border-right:1px #CCC dashed;">发布总数</td>
+            </tr>
+            {%for d in data %}
+          <tr>
+            <td align="center" class="p12hei2" style="border-bottom:1px #999 dashed; border-right:1px #CCC dashed;"> {{d.name}} </td>
+            <td align="center" class="p12hei2"  style="border-bottom:1px #999 dashed;border-right:1px #CCC dashed;">{{d.num}}</td>
+            </tr>
+
+
+            {%endfor%}
+
+          <tr>
+            <td align="center" class="p12hei2" style="border-bottom:1px #999 dashed; border-right:1px #CCC dashed;" colspan="2">
+                     <ul class="pager">{{page|raw}}</ul>       
+            </td> 
+          </tr>              
+        </table>
+
+{%endblock%}

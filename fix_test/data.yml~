@@ -1,0 +1,72 @@
+AcceptType:
+  type1:
+    name: innermongolia dairy
+    atype: 1
+  type2:
+    name: nmtv
+    atype: 1
+  type3:
+    name: cctv
+    atype: 2
+  type4:
+    name: cnn
+    atype: 2
+    
+FileAccept:
+  a1:
+    xfile_id: 1
+    cms_catid: 22
+    accept_typeid: 2
+    accept_time: 2012/7/7
+
+DBModel_XFile:
+  file1:
+    title: this is the test file
+    content: this is a test files content
+    post_time: 2009-1-1
+    update_time:
+    author: author1
+    department_id: 1
+  file2:
+    title: title test2
+    content: this is fucked up!
+    post_time: 2008-2-2
+    update_time:
+    author: author2
+    department_id: 2
+
+DBModel_User:
+  user1:
+    username: mergen
+    password: 99034203
+    group_id: 1
+    department_id: 1
+    lastlogin: 2012-7-8 1:34:05
+  user2:
+    username: admin
+    password: xyz
+    group_id: 2
+    department_id: 2
+    lastlogin: 2012/7/7
+  user3:
+    username: normal
+    password: normal
+    group_id: 3
+    department_id: 2
+    lastlogin: 2012/3/3
+
+DBModel_Group:
+  g1:
+    name: 超级管理员
+  g2:
+    name: 分级管理员
+  g3:
+    name: 普通用户
+
+DBModel_Department:
+  d1:
+    name: 人事部
+  d2:
+    name: 行政部
+  d3:
+    name: 办公室

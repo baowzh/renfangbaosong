@@ -1,0 +1,39 @@
+{%extends "base.html"%}
+
+{%block content%}
+
+
+<table width="900" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td height="36" align="center" bgcolor="#ffd3d3" class="p14cuohuong">咨询详情</td>
+          </tr>
+        </table>    
+          <table width="900" border="0" cellspacing="0" cellpadding="0" style="border:1px #999 dashed;">
+		  <tr><td>
+            
+<table width="100%" height="125" border="0" cellpadding="0" cellspacing="0" style="border:1px #999 dashed;">
+  <tr>
+    <td width="10%" height="25" valign="top" style="border-bottom:1px #999 dashed;font-size:12px;padding:10px;">问题： </td>
+    <td width="90%" valign="top" style="border-bottom:1px #999 dashed;font-size:12px;padding:10px;"> &nbsp;</td>
+  </tr>
+  <tr>
+    <td colspan="2" valign="top" style="font-size:12px;padding:10px;">{{data.q}}</td>
+  </tr>
+</table>	
+<table width="100%" height="125" border="0" cellpadding="0" cellspacing="0" style="border:1px #999 dashed;">
+  <tr>
+    <td width="10%" height="25" valign="top" style="border-bottom:1px #999 dashed;font-size:12px;padding:10px;">回答： </td>
+    <td width="90%" valign="top" style="border-bottom:1px #999 dashed;font-size:12px;padding:10px;"> &nbsp;</td>
+  </tr>
+  <tr>
+    <td colspan="2" valign="top" style="font-size:12px;padding:10px;">{{data.a}}</td>
+  </tr>
+</table>		
+            
+		  </td></tr>             
+        </table>
+
+     
+
+
+{%endblock%}

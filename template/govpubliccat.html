@@ -1,0 +1,65 @@
+{%extends "base.html"%}
+
+{%block content%}
+<div id="content">
+
+			<!-- table -->
+			<div class="box">
+				<!-- box / title -->
+				<div class="title">
+					<h5>政务公开类型查看</h5>
+					<div class="search">
+						<form action="#" method="post">
+							<div class="input">
+								<input type="text" id="search" name="search" />
+							</div>
+							<div class="button">
+								<input type="submit" name="submit" value="搜索" />
+							</div>
+						</form>
+					</div>
+				</div>
+				<!-- end box / title -->
+				<div class="table">
+					<form action="" method="post">
+					<table>
+						<thead>
+							<tr>
+								<th class="left">分类名</th>
+								<th>操作</th>								
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+							  {%for t in data %}
+								<td class="w5">{{t.name}}</td>
+								<td class="w5 center"><a href="{{dv.url("gov","catedit",{'id':t.id})}}">修改</a> <a href="#">删除</a></td>								
+							</tr>
+							{%endfor%}
+						</tbody>
+					</table>
+
+				
+					<!-- pagination -->
+					
+					<div class="pagination pagination-left">
+						<div class="results">
+							<span>显示 {{min}}-{{max}} 总记录数： {{rcc}}</span>
+						</div>
+						<ul class="pager">							
+							{{page|raw}}
+							<li class="separator">...</li>							
+						</ul>
+					</div>
+					
+					<!-- end pagination -->
+
+
+					
+					</form>
+				</div>
+			</div>
+			<!-- end table -->
+
+
+{%endblock%}

@@ -1,0 +1,72 @@
+{%extends "base.html"%}
+
+{%block content%}
+<div id="content">
+
+			<!-- table -->
+			<div class="box">
+				<!-- box / title -->
+				<div class="title">
+					<h5>信息查看(政务公开)</h5>
+					<div class="search">
+						<form action="#" method="post">
+							<div class="input">
+								<input type="text" id="search" name="search" />
+							</div>
+							<div class="button">
+								<input type="submit" name="submit" value="搜索" />
+							</div>
+						</form>
+					</div>
+				</div>
+				<!-- end box / title -->
+				<div class="table">
+					<form action="" method="post">
+					<table>
+						<thead>
+							<tr>
+								<th>标题</th>
+								<th>提交部门</th>
+								<th>作者名</th>
+								<th>提交时间</th>								
+								<th>发布到网站</th>								
+								<th>操作</th>								
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+							  {%for file in data %}
+								<td class="w3"><a href="{{dv.url("gov" , "show" , {'id' : file.id})}}">{{file.title}}</a> <i></i></td>
+								<td class="w1 center">{{file.Department.name}}</td>
+								<td class="w1">{{file.author}}</td>
+								<td class="w1">{{file.post_time}}</td>
+								<td class="w2 center">
+									<a href="{{dv.url("gov" , "accept" , {'id' : file.id})}}">发布</a>
+								</td>
+								<td class="w1 center"><a href="{{dv.url("gov" , "edit" , {'id' : file.id})}}">修改</a> <a href="{{dv.url("gov" , "edit" , {'delete' : file.id})}}">删除</a></td>								
+							</tr>
+							{%endfor%}
+						</tbody>
+					</table>
+
+				
+					<!-- pagination -->
+					
+					<div class="pagination pagination-left">
+						<div class="results">
+							<span>显示 {{min}}-{{max}} 总记录数： {{rcc}}</span>
+						</div>
+						<ul class="pager">							
+							{{page|raw}}
+							<li class="separator">...</li>							
+						</ul>
+					</div>
+					
+					<!-- end pagination -->					
+					
+				</div>
+			</div>
+			<!-- end table -->
+
+
+{%endblock%}

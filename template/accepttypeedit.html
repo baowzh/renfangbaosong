@@ -1,0 +1,45 @@
+{%extends "base.html"%}
+
+{%block content%}
+<div id="content">
+	<div class="box"> 
+		<!-- box / title -->
+		<div class="title">
+			<h5>采用类型编辑</h5>
+		</div>
+		<!-- end box / title -->
+		<form id="form" action="" method="post">
+			<div class="form">
+				<div class="fields">
+					<div class="field">
+						<div class="label">
+							<label for="group">采用形式：</label>
+						</div>
+						<div class="none">
+							<select id="select1" name="atype" class="select">
+								<option value="1" {%if data.atype ==1%} selected {%endif%}>本地采用</option>
+								<option value="2" {%if data.atype ==2%} selected {%endif%}>上级采用</option>
+							</select>
+					    </div>
+					</div>
+					<div class="field">
+						<div class="label">
+							<label for="name">采用类型名称</label>
+						</div>
+						<div class="input">		
+							<input type="hidden" name="id" value="{{data.id}}" />					
+							<input type="input" class="medium" name="name" value="{{data.name}}"/>
+						</div>
+					</div>
+					<div class="buttons">
+						<div class="highlight">
+							<input type="submit" name="submit" value="提交" class="ui-button ui-widget ui-state-default ui-corner-all" role="button" aria-disabled="false">
+						</div>
+						<input type="reset" name="reset" value="重置" class="ui-button ui-widget ui-state-default ui-corner-all" role="button" aria-disabled="false">
+					</div>
+				</div>
+			</div>
+		</form>
+	</div>
+</div>
+{%endblock%} 

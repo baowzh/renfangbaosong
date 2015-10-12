@@ -1,0 +1,89 @@
+{%extends "base.html"%}
+
+{%block content%}
+
+
+<TABLE class=tablelrb border=0 cellSpacing=0 cellPadding=0 width=850 
+align=center>
+  <TBODY>
+  <TR>
+    <TD height=300>
+      <TABLE border=0 cellSpacing=0 cellPadding=0 width=600>
+        <TBODY>
+        <TR>
+          <TD class=fontsize10>　</TD></TR></TBODY></TABLE>
+      <TABLE border=0 cellSpacing=0 cellPadding=0 width=750 align=center>
+        <TBODY>
+        <TR>
+          <TD>
+            <form id="form" action="" method="post">
+            <TABLE border=1 cellSpacing=0 borderColorLight=#000000 
+            borderColorDark=#ffffff cellPadding=2 width=740 align=center>
+              <TBODY>
+              <TR>
+                <TD class=fontsize14 height=30 width=100>
+                  <DIV align=right>用 户 名：</DIV></TD>
+                <TD class=fontsize14 width=600><input type="input" class="medium" name="username" value="{{data.username}}"/></TD></TR>
+              <TR>
+                <TD class=fontsize14 height=30>
+                  <DIV align=right>密码：</DIV></TD>
+                <TD class=fontsize14><input type="input" class="medium" name="password" value="{{data.password}}"/></TD></TR>
+              <TR>
+                <TD class=fontsize14 height=30>
+                  <DIV align=right>所属组别：</DIV></TD>
+                <TD class=fontsize14>&nbsp;							<select id="select1" name="group" class="select">
+								{%for g in group%}
+								<option value="{{g.id}}" {%if g.id == data.Group.id%} selected {%endif%}>{{g.name}}</option>
+								{%endfor%}
+							</select></TD></TR>
+              <TR>
+                <TD class=fontsize14 height=30>
+                  <DIV align=right>所属部门：</DIV></TD>
+                <TD class=fontsize14>&nbsp;							<select id="select1" name="department" class="select">
+								{%for d in department%}
+								<option value="{{d.id}}" {%if d.id == data.Department.id%} selected {%endif%}>{{d.name}}</option>
+								{%endfor%}
+							</select></TD></TR>
+             
+              <TR>
+                <TD class=fontsize14 height=40 colSpan=3>
+                  <DIV align=center><INPUT class=inputbox value=" 提 交 " type=submit name=Submit> 
+                  <SPAN class=fontsize14wu>　　　　　　　　 </SPAN><INPUT class=inputbox value=" 重 置 " type=reset name=Submit2> 
+                  </DIV></TD></TR></TBODY></TABLE></FORM></TD></TR></TBODY></TABLE>
+      <TABLE border=0 cellSpacing=0 cellPadding=0 width=600 align=center>
+        <TBODY>
+        <TR>
+          <TD class=fontsize04>　</TD></TR></TBODY></TABLE>
+</TD></TR></TBODY></TABLE>
+
+
+<div id="content">
+	<div class="box"> 
+		<!-- box / title -->
+		<div class="title">
+			<h5>用户组编辑</h5>
+		</div>
+		<!-- end box / title -->
+		<form id="form" action="" method="post">
+			<div class="form">
+				<div class="fields">
+					<div class="field">
+						<div class="label">
+							<label for="groupname">组名</label>
+						</div>
+						<div class="input">
+							<input type="input" class="medium" name="groupname" value="{{data.name}}"/>
+						</div>
+					</div>					
+					<div class="buttons">
+						<div class="highlight">
+							<input type="submit" name="submit" value="提交" class="ui-button ui-widget ui-state-default ui-corner-all" role="button" aria-disabled="false">
+						</div>
+						<input type="reset" name="reset" value="重置" class="ui-button ui-widget ui-state-default ui-corner-all" role="button" aria-disabled="false">
+					</div>
+				</div>
+			</div>
+		</form>
+	</div>
+</div>
+{%endblock%} 

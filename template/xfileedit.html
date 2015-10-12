@@ -1,0 +1,85 @@
+{%extends "base.html"%}
+
+{%block content%}
+
+
+<TABLE class=tablelrb border=0 cellSpacing=0 cellPadding=0 width=850 
+align=center>
+  <TBODY>
+  <TR>
+    <TD height=300>
+      <TABLE border=0 cellSpacing=0 cellPadding=0 width=600>
+        <TBODY>
+        <TR>
+          <TD class=fontsize10>　</TD></TR></TBODY></TABLE>
+      <TABLE border=0 cellSpacing=0 cellPadding=0 width=750 align=center>
+        <TBODY>
+        <TR>
+          <TD>
+            <form id="form" action="" method="post">
+            <TABLE border=1 cellSpacing=0 borderColorLight=#000000 
+            borderColorDark=#ffffff cellPadding=2 width=740 align=center>
+              <TBODY>
+              <TR>
+                <TD class=fontsize14 height=30 width=100>
+                  <DIV align=right>文件标题：</DIV></TD>
+                <TD class=fontsize14 width=600>
+                							<input type="hidden" name="file_id" value="{{data.id}}">
+							<input type="input" class="medium" name="title" value="{{data.title}}" size="70"/><div style="color:red">【必填，40字以内】</div>
+                </TD></TR>
+              <TR>
+                <TD class=fontsize14 height=30>
+                  <DIV align=right>内容：<div style="color:red">（必填，请将内容改为纯文本文字，粘贴到右面的空白处）</div></DIV></TD>
+                <TD class=fontsize14>{{editor|raw}}</TD></TR>
+              <TR>
+                <TD class=fontsize14 height=30>
+                  <DIV align=right>作者：</DIV></TD>
+                <TD class=fontsize14><input type="input" class="medium" name="author" value="{{data.author}}"/>
+							由上报单位自行填写 </TD></TR>
+
+{%if login.group_id == 1%}
+              <TR>
+                <TD class=fontsize14 height=30>
+                  <DIV align=right>是否下发文件：</DIV></TD>
+                <TD class=fontsize14>
+                
+<div class="radio">
+								<input type="radio" id="radio-1" name="xfwj" value="1" {% if data.xfwj %} checked {%endif%}/>
+								<label for="radio-1">是</label>
+							</div>
+							<div class="radio">
+								<input type="radio" id="radio-2" name="xfwj" value="0" {% if not data.xfwj %} checked {%endif%} />
+								<label for="radio-2">否</label>
+							</div>                
+                
+                </TD></TR>
+
+{%endif%}                
+
+
+                
+              <TR>
+                <TD class=fontsize14 height=30>
+                  <DIV align=right>发送部门：{% if data.id > 0 %}
+							(如果不改变选项，则保持提交文件时候的数据。)
+							{% endif%}</DIV></TD>
+                <TD class=fontsize14><select name="sendto[]" multiple  size="25"  style="width:500px;" >
+								{%for d in department%}
+								<option   value= "{{d.id}}"   {% if not data.sendto %} checked {%endif%}> {{d.name}}</option>
+								{%endfor%}
+							</select> </TD></TR>                
+             
+              <TR>
+                <TD class=fontsize14 height=40 colSpan=3>
+                  <DIV align=center><INPUT class=inputbox value=" 提 交 " type=submit name=Submit> 
+                  <SPAN class=fontsize14wu>　　　　　　　　 </SPAN><INPUT class=inputbox value=" 重 置 " type=reset name=Submit2> 
+                  </DIV></TD></TR></TBODY></TABLE></FORM></TD></TR></TBODY></TABLE>
+      <TABLE border=0 cellSpacing=0 cellPadding=0 width=600 align=center>
+        <TBODY>
+        <TR>
+          <TD class=fontsize04>　</TD></TR></TBODY></TABLE>
+</TD></TR></TBODY></TABLE>
+
+
+
+{%endblock%} 

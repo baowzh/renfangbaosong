@@ -1,0 +1,57 @@
+{%extends "base.html"%}
+
+{%block content%}
+
+
+<table width="900" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td height="36" align="center" bgcolor="#ffd3d3" class="p14cuohuong">技术咨询</td>
+          </tr>
+        </table>
+<table width="900" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td height="36" align="center" bgcolor="#ffd3d3" class="p14cuohuong">
+                 <a href="{{dv.url("faq","addq")}}" class="p14cuohuong" style="color: #900;">问 题 咨 询</a>                     
+            </td>
+          </tr>
+        </table>        
+          <table width="900" border="0" cellspacing="0" cellpadding="0" style="border:1px #999 dashed;">
+          <tr>
+		  <td width="50" height="32" align="center" class="p12hong" style="border-bottom:1px #999 dashed; border-right:1px #CCC dashed;">编号 </td>
+            <td  width="500" height="32" align="center" class="p12hong" style="border-bottom:1px #999 dashed; border-right:1px #CCC dashed;">问题 </td>
+			<td width="200"  height="32" align="center" class="p12hong" style="border-bottom:1px #999 dashed; border-right:1px #CCC dashed;"> 回答 </td>
+            <td align="center" class="p12hong"  style="border-bottom:1px #999 dashed;border-right:1px #CCC dashed;">操作</td>
+            </tr>
+            {%for d in data %}
+          <tr>
+            <td align="center" class="p12hei2" style="border-bottom:1px #999 dashed; border-right:1px #CCC dashed;"> {{d.id}} </td>
+			<td align="center" class="p12hei2" style="border-bottom:1px #999 dashed; border-right:1px #CCC dashed;padding:10px;"> {{d.q}} </td>
+			<td align="center" class="p12hei2" style="border-bottom:1px #999 dashed; border-right:1px #CCC dashed;"> 
+			<a href="{{dv.url("faq","showans",{'id':d.id})}}" style="color:black;">
+			查看回答 
+			</a>
+			{% if login.group_id == 1%}　　
+			<a href="{{dv.url("faq","adda",{'id':d.id})}}" style="color:black;">
+			增加回答 
+			</a>
+      {%endif%}
+			</td>
+            <td align="center" class="p12hei2"  style="border-bottom:1px #999 dashed;border-right:1px #CCC dashed;"><table width="100" border="0" cellspacing="0" cellpadding="0">
+              <tr>                
+                <td align="center" class="p12rl"><a href="{{dv.url("faq","delete",{'id':d.id})}}">删除</a></td>
+              </tr>
+            </table></td>
+            </tr>
+
+
+            {%endfor%}
+
+          <tr>
+            <td align="center" class="p12hei2" style="border-bottom:1px #999 dashed; border-right:1px #CCC dashed;" colspan="2">
+                     <ul class="pager">{{page|raw}}</ul>       
+            </td> 
+          </tr>              
+        </table>
+
+
+{%endblock%}

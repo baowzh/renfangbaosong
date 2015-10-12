@@ -1,0 +1,63 @@
+{%extends "base.html"%}
+
+{%block content%}
+<div id="content">
+	<div class="box"> 
+		<!-- box / title -->
+		<div class="title">
+			<h5>添加信息(政务公开)</h5>
+		</div>
+		<!-- end box / title -->
+		<form id="form" action="" method="post">
+			<div class="form">
+				<div class="fields">
+					<div class="field">
+						<div class="label">
+							<label for="title">文件标题</label>
+						</div>
+						<div class="input">
+							<input type="hidden" name="file_id" value="{{data.id}}">
+							<input type="input" class="medium" name="title" value="{{data.title}}"/>
+						</div>
+					</div>
+					<div class="field">
+						<div class="label">
+							<label for="content">内容</label>
+						</div>
+					</div>
+					<div class="field">
+						{{editor|raw}} </div>
+					<div class="field">
+						<div class="label">
+							<label for="author">作者</label>
+						</div>
+						<div class="input">
+							<input type="input" class="medium" name="author" value="{{data.author}}"/>
+							由上报单位自行填写 </div>
+					</div>					
+					<div class="field">
+						<div class="label">
+							<label for="title">
+							公开类型
+							</label>
+						</div>
+						<div class="none">
+							<select name="catid" class="select" id="select1">
+							{%for c in cats%}
+								<option value="{{c.id}}">{{c.name}}</option>
+							{%endfor%}
+							</select>
+						</div>
+					</div>
+					<div class="buttons">
+						<div class="highlight">
+							<input type="submit" name="submit" value="提交" class="ui-button ui-widget ui-state-default ui-corner-all" role="button" aria-disabled="false">
+						</div>
+						<input type="reset" name="reset" value="重置" class="ui-button ui-widget ui-state-default ui-corner-all" role="button" aria-disabled="false">
+					</div>
+				</div>
+			</div>
+		</form>
+	</div>
+</div>
+{%endblock%} 

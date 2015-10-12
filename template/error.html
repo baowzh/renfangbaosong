@@ -1,0 +1,21 @@
+{%extends "base.html"%}
+
+{%block content%}
+<div id="content">
+	<div class="box">
+	<div id="box-messages">
+		<h2>出错了！</h2>
+		<div class="messages">
+			<div id="message-error" class="message message-error">
+				<div class="image"> <img src="resources/images/icons/error.png" alt="Error" height="32" /> </div>
+				<div class="text">
+					<h6>{{title}}</h6>
+					<span>{{text}}</span> </div>
+				<div class="dismiss"> <a href="#message-error"></a> </div>
+			</div>
+						
+		</div>
+	</div>
+	</div>
+</div>
+{%endblock%} 

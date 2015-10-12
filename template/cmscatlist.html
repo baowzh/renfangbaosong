@@ -1,0 +1,57 @@
+{%extends "base.html"%}
+
+{%block content%}
+
+<div id="content">
+			<!-- table -->
+			<div class="box">
+				<!-- box / title -->
+				<div class="title">
+					<h5>部门查看</h5>
+					<div class="search">
+						<form action="#" method="post">
+							<div class="input">
+								<input type="text" id="search" name="search" />
+							</div>
+							<div class="button">
+								<input type="submit" name="submit" value="搜索" />
+							</div>
+						</form>
+					</div>
+				</div>
+				<!-- end box / title -->
+				<div class="table">
+					<form action="" method="post">
+					<table>
+						<thead>
+							<tr>
+								<th>部门名</th>								
+								<th>操作</th>								
+							</tr>
+						</thead>
+						<tbody>
+						    {%for d in data %}
+							<tr>
+								<td class="w7 center">{{d.name}}  ({%if d.atype == 1%} 上级采用  {%endif%}  {%if d.atype == 2%} 上级采用  {%endif%})</td>								
+								<td class="w3 center"><a href="{{dv.url("department","edit",{'id':d.id})}}">修改</a> <a href="#">删除</a></td>				
+							</tr>
+							{%endfor%}
+						</tbody>
+					</table>
+					<!-- pagination -->
+					<div class="pagination pagination-left">
+						<div class="results">
+							<span>显示 {{min}}-{{max}} 总记录数： {{rcc}}</span>
+						</div>
+						<ul class="pager">							
+							{{page|raw}}
+							<li class="separator">...</li>							
+						</ul>
+					</div>
+					<!-- end pagination -->								
+				</div>
+			</div>
+			<!-- end table -->
+
+
+{%endblock%}

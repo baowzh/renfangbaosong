@@ -1,0 +1,51 @@
+{%extends "base.html"%}
+
+{%block content%}
+
+<form id="form" action="" method="post">
+<table width="780" border="0" cellspacing="0" cellpadding="0" style="border:1px #999 dashed;">
+
+		<tr>
+			<td colspan="3">
+				<center>
+					<h3>请输入你要咨询的问题？</h3>
+				</center>
+			</td>
+		</tr>
+
+          <tr>
+
+            <td width="133" align="right" class="p12hei2"  style="border-bottom:1px #999 dashed;border-right:1px #CCC dashed;"> 咨询问题： </td>
+
+            <td width="11"  style="border-bottom:1px #999 dashed;">&nbsp;</td>
+
+            <td align="left"  style="border-bottom:1px #999 dashed;"><label for="select"></label>
+
+              <label for="textfield"></label>
+
+              <input type="hidden" name="id" value="{{data.id}}" />
+              <!-- <input type="input" class="medium" name="q" value="{{data.q}}"/></td>-->
+			  <textarea rows="10" cols="80" name="q">{{data.q}}</textarea>
+
+          </tr>
+
+          </table>
+
+          <table width="780" border="0" cellspacing="0" cellpadding="0">
+
+            <tr>
+
+              <td width="399" height="36">&nbsp;</td>
+
+              <td width="60"><INPUT class=inputbox value=" 提 交 " type=submit name=Submit></td>
+
+              <td width="54"><INPUT class=inputbox value=" 重 置 " type=reset name=Submit2></td>
+
+              <td width="267">&nbsp;</td>
+
+            </tr>
+
+</table>
+</form>
+
+{%endblock%} 

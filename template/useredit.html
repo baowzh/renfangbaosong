@@ -1,0 +1,51 @@
+{%extends "base.html"%}
+
+{%block content%}
+
+<form id="form" action="" method="post">
+<table width="780" border="0" cellspacing="0" cellpadding="0" style="border:1px #999 dashed;">
+          <tr>
+            <td width="133" align="right" class="p12hei2" style="border-bottom:1px #999 dashed; border-right:1px #CCC dashed;"> 用户名：</td>
+            <td width="11" style="border-bottom:1px #999 dashed;">&nbsp;</td>
+            <td height="35" align="left" class="p12hong"  style="border-bottom:1px #999 dashed;"><label for="textfield"></label>
+              <label for="textfield2"></label>
+              <input type="input" class="medium" name="username" value="{{data.username}}"/></td>
+          </tr>
+          <tr>
+            <td align="right" class="p12hei2"  style="border-bottom:1px #999 dashed;border-right:1px #CCC dashed;"> 密码：</td>
+            <td  style="border-bottom:1px #999 dashed;">&nbsp;</td>
+            <td height="29" align="left"  style="border-bottom:1px #999 dashed;"><span class="p12hong" style="border-bottom:1px #999 dashed;">
+              <input type="input" class="medium" name="password" value="{{data.password}}"/>
+            </span></td>
+          </tr>
+          <tr>
+            <td align="right" class="p12hei2"  style="border-bottom:1px #999 dashed;border-right:1px #CCC dashed;"> 所属组别：</td>
+            <td  style="border-bottom:1px #999 dashed;">&nbsp;</td>
+            <td align="left" valign="middle" class="p12hei2"  style="border-bottom:1px #999 dashed;"><select id="select1" name="group" class="select">
+                {%for g in group%}
+                <option value="{{g.id}}" {%if g.id == data.Group.id%} selected {%endif%}>{{g.name}}</option>
+                {%endfor%}
+              </select></td>
+            </tr>
+          <tr>
+            <td align="right" class="p12hei2"  style="border-bottom:1px #999 dashed;border-right:1px #CCC dashed;"> 所属部门：</td>
+            <td  style="border-bottom:1px #999 dashed;">&nbsp;</td>
+            <td align="left"  style="border-bottom:1px #999 dashed;"><label for="select"></label>
+              <select id="select1" name="department" class="select">
+                {%for d in department%}
+                <option value="{{d.id}}" {%if d.id == data.Department.id%} selected {%endif%}>{{d.name}}</option>
+                {%endfor%}
+              </select></td>
+          </tr>
+          </table>
+          <table width="780" border="0" cellspacing="0" cellpadding="0">
+            <tr>
+              <td width="399" height="36">&nbsp;</td>
+              <td width="60"><INPUT class=inputbox value=" 提 交 " type=submit name=Submit></td>
+              <td width="54"><INPUT class=inputbox value=" 重 置 " type=reset name=Submit2></td>
+              <td width="267">&nbsp;</td>
+            </tr>
+          </table>
+</form>          
+
+{%endblock%} 

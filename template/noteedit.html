@@ -1,0 +1,57 @@
+{%extends "base.html"%}
+
+{%block content%}
+
+<form id="form" action="" method="post">
+<table width="780" border="0" cellspacing="0" cellpadding="0" style="border:1px #999 dashed;">
+
+          <tr>
+
+            <td width="133" align="right" class="p12hei2"  style="border-bottom:1px #999 dashed;border-right:1px #CCC dashed;"> 通知标题： </td>
+
+            <td width="11"  style="border-bottom:1px #999 dashed;">&nbsp;</td>
+
+            <td align="left"  style="border-bottom:1px #999 dashed;"><label for="select"></label>
+
+              <label for="textfield"></label>
+
+              <input type="hidden" name="id" value="{{data.id}}" />
+              <input type="input" class="medium" name="title" value="{{data.title}}" size="50"/></td>
+
+          </tr>
+
+          <tr>
+
+            <td width="133" align="right" class="p12hei2"  style="border-bottom:1px #999 dashed;border-right:1px #CCC dashed;"> 通知内容： </td>
+
+            <td width="11"  style="border-bottom:1px #999 dashed;">&nbsp;</td>
+
+            <td align="left"  style="border-bottom:1px #999 dashed;"><label for="select"></label>
+
+              <label for="textfield"></label>
+
+              {{editor|raw}}
+            </td>
+
+          </tr>          
+
+          </table>
+
+          <table width="780" border="0" cellspacing="0" cellpadding="0">
+
+            <tr>
+
+              <td width="299" height="36">&nbsp;</td>
+
+              <td width="60"><INPUT class=inputbox value=" 提 交 " type=submit name=Submit></td>
+
+              <td width="54"><INPUT class=inputbox value=" 重 置 " type=reset name=Submit2></td>
+
+              <td width="267">&nbsp;</td>
+
+            </tr>
+
+</table>
+</form>
+
+{%endblock%} 

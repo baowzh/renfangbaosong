@@ -1,0 +1,48 @@
+{%extends "base.html"%}
+
+{%block content%}
+
+
+<table width="817" border="0" cellspacing="0" cellpadding="0">
+    <tr>
+            <td height="36" align="center" style="background:#f2f2f2;"  class="p14cuohuong">用户管理</td>
+    </tr>
+</table>
+<!--  
+<table width="817" border="0" cellspacing="0" cellpadding="0">
+    <tr>
+            <td height="36" align="center" bgcolor="#ffd3d3" class="p14cuohuong">
+              <a href="{{dv.url("user","add")}}" class="p14cuohuong" style="color: #900;">添 加 用 户</a>     
+            </td>
+    </tr>
+</table>
+-->
+
+<table width="817" border="0" cellspacing="0" cellpadding="0" style="border:1px #999 dashed;">
+          <tr>
+            <td height="32" align="center" class="p12hong" style="border-bottom:1px #999 dashed; border-right:1px #CCC dashed;">用户管理</td>
+            <td align="center" class="p12hong"  style="border-bottom:1px #999 dashed;border-right:1px #CCC dashed;">部门管理</td>
+            <td align="center" class="p12hong"  style="border-bottom:1px #999 dashed;border-right:1px #CCC dashed;">组别管理</td>
+            <td align="center" class="p12hong"  style="border-bottom:1px #999 dashed;border-right:1px #CCC dashed;">操作</td>
+          </tr>
+{%for d in data %}
+          <tr>
+            <td align="center" class="p12hei2" style="border-bottom:1px #999 dashed; border-right:1px #CCC dashed;">{{d.username}}</td>
+            <td align="center" class="p12hei2"  style="border-bottom:1px #999 dashed;border-right:1px #CCC dashed;">{{d.Department.name}}</td>
+            <td align="center" class="p12hei2"  style="border-bottom:1px #999 dashed;border-right:1px #CCC dashed;">{{d.Group.name}}</td>
+            <td align="center" class="p12hei2"  style="border-bottom:1px #999 dashed;border-right:1px #CCC dashed;">
+               <DIV align=center><a class=fontsize14 href="{{dv.url("user","edit",{'id':d.id})}}">修改</a> <a class=fontsize14 href="{{dv.url("user","delete",{'id':d.id})}}">删除</a></DIV>
+            </td>
+          </tr>          
+{%endfor%}
+
+<tr>
+    <td align="center" class="p12hei2" colspan="4">
+      <ul class="pager">{{page|raw}}</ul>       
+    </td>
+</tr>
+
+
+        </table>
+
+{%endblock%}

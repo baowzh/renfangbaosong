@@ -1,0 +1,66 @@
+{%extends "base.html"%}
+
+{%block content%}
+
+<div id="content">
+			<!-- table -->
+			<div class="box">
+				<!-- box / title -->
+				<div class="title">
+					<h5>组（用户组）查看</h5>
+					<div class="search">
+						<form action="#" method="post">
+							<div class="input">
+								<input type="text" id="search" name="search" />
+							</div>
+							<div class="button">
+								<input type="submit" name="submit" value="搜索" />
+							</div>
+						</form>
+					</div>
+				</div>
+				<!-- end box / title -->
+				<div class="table">
+					<form action="" method="post">
+					<table>
+						<thead>
+							<tr>
+								<th>部门名</th>								
+								<th>操作</th>								
+							</tr>
+						</thead>
+						<tbody>
+						       {%for group in data %}
+							<tr>
+								<td class="title">{{group.name}}</td>								
+								<td class="category"><a href="{{dv.url("group","edit",{'id':group.id})}}">修改</a> <a href="#">删除</a></td>				
+							</tr>
+							{%endfor%}
+						</tbody>
+					</table>
+					<!-- pagination -->
+					<div class="pagination pagination-left">
+						<div class="results">
+							<span>showing results 1-10 of 207</span>
+						</div>
+						<ul class="pager">
+							<li class="disabled">&laquo; prev</li>
+							<li class="current">1</li>
+							<li><a href="">2</a></li>
+							<li><a href="">3</a></li>
+							<li><a href="">4</a></li>
+							<li><a href="">5</a></li>
+							<li class="separator">...</li>
+							<li><a href="">20</a></li>
+							<li><a href="">21</a></li>
+							<li><a href="">next &raquo;</a></li>
+						</ul>
+					</div>
+					<!-- end pagination -->
+					</form>
+				</div>
+			</div>
+			<!-- end table -->
+
+
+{%endblock%}
