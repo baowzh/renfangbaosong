@@ -17,15 +17,15 @@ select
 v9_department.name,
 count(v9_xfile.id) as sendnum,
 count(v9_fileaccept.xfile_id) as anum,
-(select count(accept_typeid) from v9_fileaccept where accept_typeid=1 and v9_fileaccept.xfile_id=v9_xfile.id) as cy1,
-(select count(accept_typeid) from v9_fileaccept where accept_typeid=2 and v9_fileaccept.xfile_id=v9_xfile.id) as cy2,
-(select count(accept_typeid) from v9_fileaccept where accept_typeid=3 and v9_fileaccept.xfile_id=v9_xfile.id) as cy3,
-(select count(accept_typeid) from v9_fileaccept where accept_typeid=4 and v9_fileaccept.xfile_id=v9_xfile.id) as cy4,
-(select count(accept_typeid) from v9_fileaccept where accept_typeid=5 and v9_fileaccept.xfile_id=v9_xfile.id) as cy5,
-(select count(accept_typeid) from v9_fileaccept where accept_typeid=6 and v9_fileaccept.xfile_id=v9_xfile.id) as cy6,
-(select count(accept_typeid) from v9_fileaccept where accept_typeid=7 and v9_fileaccept.xfile_id=v9_xfile.id) as cy7,
-(select count(accept_typeid) from v9_fileaccept where accept_typeid=8 and v9_fileaccept.xfile_id=v9_xfile.id) as cy8,
-(select count(accept_typeid) from v9_fileaccept where accept_typeid=9 and v9_fileaccept.xfile_id=v9_xfile.id) as cy9
+(select count(accept_typeid) from v9_fileaccept where accept_typeid=1435 and v9_fileaccept.xfile_id=v9_xfile.id) as cy1,
+(select count(accept_typeid) from v9_fileaccept where accept_typeid=1440 and v9_fileaccept.xfile_id=v9_xfile.id) as cy2,
+(select count(accept_typeid) from v9_fileaccept where accept_typeid=1453 and v9_fileaccept.xfile_id=v9_xfile.id) as cy3,
+(select count(accept_typeid) from v9_fileaccept where accept_typeid=1454 and v9_fileaccept.xfile_id=v9_xfile.id) as cy4,
+(select count(accept_typeid) from v9_fileaccept where accept_typeid=1455 and v9_fileaccept.xfile_id=v9_xfile.id) as cy5,
+(select count(accept_typeid) from v9_fileaccept where accept_typeid=1457 and v9_fileaccept.xfile_id=v9_xfile.id) as cy6,
+(select count(accept_typeid) from v9_fileaccept where accept_typeid=1458 and v9_fileaccept.xfile_id=v9_xfile.id) as cy7,
+(select count(accept_typeid) from v9_fileaccept where accept_typeid=1459 and v9_fileaccept.xfile_id=v9_xfile.id) as cy8,
+(select count(accept_typeid) from v9_fileaccept where accept_typeid=1476 and v9_fileaccept.xfile_id=v9_xfile.id) as cy9
 from v9_department
 left join v9_xfile on v9_xfile.department_id = v9_department.id
 left join v9_fileaccept on v9_xfile.id=v9_fileaccept.xfile_id

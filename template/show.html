@@ -1,60 +1,86 @@
-{%extends "base.html"%}
-
-{%block content%}
-
-
-<TABLE class=tablelrb border=0 cellSpacing=0 cellPadding=0 width=850 
-align=center>
-  <TBODY>
-  <TR>
-    <TD height=300>
-      <TABLE border=0 cellSpacing=0 cellPadding=0 width=600>
-        <TBODY>
-        <TR>
-          <TD class=fontsize10>查看</TD></TR></TBODY></TABLE>
-      <TABLE border=0 cellSpacing=0 cellPadding=0 width=750 align=center>
-        <TBODY>
-        <TR>
-          <TD>
-            <form id="form" action="" method="post">
-            <TABLE border=1 cellSpacing=0 borderColorLight=#000000 
-            borderColorDark=#ffffff cellPadding=2 width=740 align=center>
-              <TBODY>
-              <TR>
-                <TD class=fontsize14 height=30 width=100>
-                  <DIV align=right>标题</DIV></TD>
-                <TD class=fontsize14 width=600>{{data.title}}</TD></TR>
-			  <TR>
-                <TD class=fontsize14 height=30 width=100>
-                  <DIV align=right>来源</DIV></TD>
-                <TD class=fontsize14 width=600>{{data.Department.name}}</TD></TR>				
-              <TR>
-                <TD class=fontsize14 height=30>
-                  <DIV align=right>内容</DIV></TD>
-                <TD class=fontsize14>{{data.content|raw}}</TD></TR>
-              </TBODY></TABLE></FORM></TD></TR></TBODY></TABLE>
-      <TABLE border=0 cellSpacing=0 cellPadding=0 width=600 align=center>
-        <TBODY>
-        <TR>
-          <TD class=fontsize04>��</TD></TR></TBODY></TABLE>
-</TD></TR></TBODY></TABLE>
+{%extends "base.html"%} {%block content%}
+<TABLE class=tablelrb border=0 cellSpacing=0 cellPadding=0 width=850
+	align=center>
+	<TBODY>
+		<TR>
+			<TD height=300>
+				<TABLE border="0" cellSpacing="0" cellPadding="0" width="750" align="center">
+					<TBODY>
+						<TR>
+							<TD height="36" align="center" class="p14cuohuong" style="background: #f2f2f2;">查看</TD>
+						</TR>
+					</TBODY>
+				</TABLE>
+				<TABLE style="border: 1px #999 solid;" cellSpacing=0 cellPadding=0 width="750" align="center">
+					<TBODY>
+						<TR>
+							<TD>
+								<form id="form" action="" method="post">
+									<TABLE  cellSpacing=0
+										borderColorLight=#000000 borderColorDark=#ffffff cellPadding=0
+										width="100%" align=center>
+										<TBODY>
+											<TR>
+												<TD class="fontsize14" height="30" width="100"
+													style="border-bottom: 1px #999 solid; border-right: 1px #CCC solid;">
+													<DIV align="center" class="p12hong">标题</DIV>
+												</TD>
+												<TD  width="600"
+													style="border-bottom: 1px #999 solid; border-right: 1px #CCC solid; text-align: center;" class="p12hong">{{data.title}}</TD>
+											</TR>
+											<TR>
+												<TD  height="30" width="100"
+													style="border-bottom: 1px #999 solid; border-right: 1px #CCC solid;">
+													<DIV align="center" class="p12hong">来源</DIV>
+												</TD>
+												<TD  width="600"
+													style="border-bottom: 1px #999 solid; border-right: 1px #CCC solid;" class="p12hong">{{data.Department.name}}</TD>
+											</TR>
+											<TR>
+												<TD class="fontsize14" height="30"
+													style="border-bottom: 1px #999 solid; border-right: 1px #CCC solid;">
+													<DIV align="center" class="p12hong">内容</DIV>
+												</TD>
+												<TD class="fontsize14"
+													style="border-bottom: 1px #999 solid; border-right: 1px #CCC solid;">{{data.content|raw}}</TD>
+											</TR>
+										</TBODY>
+									</TABLE>
+					</FORM>
+					</TD>
+					</TR>
+					</TBODY>
+				</TABLE>
+				<!--  
+				<TABLE border=0 cellSpacing=0 cellPadding=0 width=600 align=center>
+					<TBODY>
+						<TR>
+							<TD class=fontsize04>��</TD>
+						</TR>
+					</TBODY>
+				</TABLE>
+				-->
+			</TD>
+		</TR>
+	</TBODY>
+</TABLE>
 
 
 
 <div id="content">
 
 
-<div class="box ui-tabs ui-widget ui-widget-content ui-corner-all" id="box-tabs">
-				<!-- box / title -->
-				<div class="title">
-					<h5></h5>
-				</div>
-				
-				
-				<div id="box-other" class="ui-tabs-panel ui-widget-content ui-corner-bottom">
-					
-				</div>
-			</div>
+	<div class="box ui-tabs ui-widget ui-widget-content ui-corner-all"
+		id="box-tabs">
+		<!-- box / title -->
+		<div class="title">
+			<h5></h5>
+		</div>
+
+
+		<div id="box-other"
+			class="ui-tabs-panel ui-widget-content ui-corner-bottom"></div>
+	</div>
 
 
 </div>

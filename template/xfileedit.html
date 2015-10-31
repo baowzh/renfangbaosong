@@ -63,7 +63,7 @@ align=center>
                   <DIV align=right>发送部门：{% if data.id > 0 %}
 							(如果不改变选项，则保持提交文件时候的数据。)
 							{% endif%}</DIV></TD>
-                <TD class=fontsize14><select name="sendto[]" multiple  size="25"  style="width:500px;" >
+                <TD class=fontsize14><select name="sendto[]" multiple  size="25"  style="width:100%;" >
 								{%for d in department%}
 								<option   value= "{{d.id}}"   {% if not data.sendto %} checked {%endif%}> {{d.name}}</option>
 								{%endfor%}

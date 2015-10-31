@@ -136,3 +136,16 @@ a:visited {
 .pager a{
 	font-size:14px;
 }
+.p18biaoti {
+    font-size: 28px;
+    font-family: "微软雅黑";
+    color: #F60;
+    line-height: 35px;
+    font-weight: bold;
+}
+.p30ju {
+    font-size: 30px;
+    color: #ff6600;
+    font-weight: bold;
+    font-family: "Microsoft Yahei","宋体","黑体";
+}

@@ -1,66 +1,107 @@
-{%extends "base.html"%}
+{%extends "base.html"%} {%block content%}
+<form id="form" action="" method="post">
+	<table width="780" border="0" cellspacing="0" cellpadding="0">
+		<tr>
+			<td height="36" align="center" style="background: #f2f2f2;"
+				class="p14cuohuong">采用</td>
+		</tr>
+	</table>
+	<table width="780" border="0" cellspacing="0" cellpadding="0"
+		style="border: 1px #999 solid;">
+		<tr>
+			<td width="204" align="right" class="p12hei2"
+				style="border-bottom: 1px #999 solid; border-right: 1px #CCC solid;">
+				采用文件的名称：</td>
+			<td width="10" style="border-bottom: 1px #999 solid;">&nbsp;</td>
+			<td width="568" height="35" class="p12hong"
+				style="border-bottom: 1px #999 solid;"><label for="textfield"></label>
+				{{xfile.title}}<input type="hidden" value="{{xfile.id}}"
+				name="xfile_id" /></td>
+		</tr>
+		<tr>
+			<td align="right" class="p12hei2"
+				style="border-bottom: 1px #999 solid; border-right: 1px #CCC solid;">
+				采用一级栏目 ：</td>
+			<td style="border-bottom: 1px #999 solid;">&nbsp;</td>
+			<td height="29" align="left" style="border-bottom: 1px #999 solid;"><table
+					width="419" height="23" border="0" cellpadding="0" cellspacing="0">
+					<tr>
+						<td class="p12hei2">{% for l in types_local%} <input
+							type="radio" name="accepttype"
+							onclick="javascript:loadcatids('{{l.id}}')" value="{{l.id}}" />{{l.name}}
+							{% endfor%}
+						</td>
+					</tr>
+				</table></td>
+		</tr>
+		<tr>
+			<td align="right" class="p12hei2"
+				style="border-bottom: 1px #999 solid; border-right: 1px #CCC solid;">
+				上级采用 ：</td>
+			<td style="border-bottom: 1px #999 solid;">&nbsp;</td>
+			<td align="left" valign="middle" class="p12hei2"
+				style="border-bottom: 1px #999 solid;"><table width="219"
+					height="23" border="0" cellpadding="0" cellspacing="0">
+					<tr>
+						<td class="p12hei2">{% for t in types_up%} <input
+							type="radio" name="accepttype" value="{{t.id}}" />{{t.name}} {%
+							endfor%}
+						</td>
+					</tr>
+				</table></td>
+		</tr>
+		<tr>
+			<td align="right" class="p12hei2"
+				style="border-bottom: 1px #999 solid; border-right: 1px #CCC solid;">
+				自动发布到网站（选择网站二级栏目）</td>
+			<td style="border-bottom: 1px #999 solid;">&nbsp;</td>
+			<td align="left" style="border-bottom: 1px #999 solid;"><label
+				for="select"></label> <select id="select" name="cmscatid">
+					<option value="0">不发送到网站内容管理系统.</option> {%for t in cmstypes%}
+					<option value="{{t.catid}}">{% if t.child == 0%}
+						&nbsp;&nbsp;&nbsp;&nbsp;{{t.catname}} {% else%} {{t.catname}} {%
+						endif%}</option> {%endfor%}
+			</select></td>
+		</tr>
+	</table>
+	<table width="780" border="0" cellspacing="0" cellpadding="0">
+		<tr>
+			<td width="399" height="36">&nbsp;</td>
+			<td width="60"><INPUT class=inputbox value=" 提 交 " type=submit
+				name=Submit></td>
+			<td width="54"><INPUT class=inputbox value=" 重 置 " type=reset
+				name=Submit2></td>
+			<td width="267">&nbsp;</td>
+		</tr>
+	</table>
+</form>
+<script type="text/javascript">
+	var jsonarray = new Array();
+	$(document).ready(function() {
+		var json = '{{cats|json_encode()|raw}}';
+		jsonarray = $.parseJSON(json);
+	});
+	var loadcatids = function(catid) {
+		$('#select').empty();
+		var isempty = true;
+		for (i in jsonarray) {
+			if (catid == jsonarray[i].parentid) {
+				$("#select").append(
+						"<option value='"+jsonarray[i].catid+"'>"
+								+ jsonarray[i].catname + "</option>");
+				isempty=false;
+			}
+		}
+		if(isempty){
+			for (i in jsonarray) {
+				if (catid == jsonarray[i].catid) {
+					$("#select").append(
+							"<option value='"+jsonarray[i].catid+"'>"
+									+ jsonarray[i].catname + "</option>");
+				}
+			}	
+		}
 
-{%block content%}
- <form id="form" action="" method="post">
-<table width="780" border="0" cellspacing="0" cellpadding="0" style="border:1px #999 dashed;">
-          <tr>
-            <td width="204" align="right" class="p12hei2" style="border-bottom:1px #999 dashed; border-right:1px #CCC dashed;"> 采用文件的名称： </td>
-            <td width="10" style="border-bottom:1px #999 dashed;">&nbsp;</td>
-            <td width="568" height="35" class="p12hong"  style="border-bottom:1px #999 dashed;"><label for="textfield"></label>
-              {{xfile.title}}<input type="hidden" value="{{xfile.id}}" name="xfile_id"/></td>
-          </tr>
-          <tr>
-            <td align="right" class="p12hei2"  style="border-bottom:1px #999 dashed;border-right:1px #CCC dashed;"> 本地采码 ：</td>
-            <td  style="border-bottom:1px #999 dashed;">&nbsp;</td>
-            <td height="29" align="left"  style="border-bottom:1px #999 dashed;"><table width="219" height="23" border="0" cellpadding="0" cellspacing="0">
-              <tr>
-                <td class="p12hei2">{% for l in types_local%}
-                <input type="radio" name="accepttype" value="{{l.id}}"/>{{l.name}}
-              {% endfor%}</td>
-              </tr>
-            </table></td>
-          </tr>
-          <tr>
-            <td align="right" class="p12hei2"  style="border-bottom:1px #999 dashed;border-right:1px #CCC dashed;"> 上级采用 ：</td>
-            <td  style="border-bottom:1px #999 dashed;">&nbsp;</td>
-            <td align="left" valign="middle" class="p12hei2"  style="border-bottom:1px #999 dashed;"><table width="219" height="23" border="0" cellpadding="0" cellspacing="0">
-              <tr>
-                <td class="p12hei2">                  
-              {% for t in types_up%}
-                <input type="radio" name="accepttype" value="{{t.id}}"/>{{t.name}}
-              {% endfor%}
-                </td>
-              </tr>
-            </table></td>
-            </tr>
-          <tr>
-            <td align="right" class="p12hei2"  style="border-bottom:1px #999 dashed;border-right:1px #CCC dashed;"> 自动发布到网站（选择网站分类） </td>
-            <td  style="border-bottom:1px #999 dashed;">&nbsp;</td>
-            <td align="left"  style="border-bottom:1px #999 dashed;"><label for="select"></label>
-<select id="select" name="cmscatid">
-                <option value="0">不发送到网站内容管理系统.</option>
-                {%for t in cmstypes%}
-                <option value="{{t.catid}}">
-                {% if t.child == 0%}
-                  &nbsp;&nbsp;&nbsp;&nbsp;{{t.catname}}
-                {% else%}
-                  {{t.catname}}
-                {% endif%}                
-                </option>
-                {%endfor%}
-              </select>              
-            </td>
-          </tr>
-          </table>
-          <table width="780" border="0" cellspacing="0" cellpadding="0">
-            <tr>
-              <td width="399" height="36">&nbsp;</td>
-              <td width="60"><INPUT class=inputbox value=" 提 交 " type=submit name=Submit></td>
-              <td width="54"><INPUT class=inputbox value=" 重 置 " type=reset name=Submit2></td>
-              <td width="267">&nbsp;</td>
-            </tr>
-          </table>
-</form>          
-
-
-{%endblock%} 
+	}
+</script>
+{%endblock%}

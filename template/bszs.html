@@ -8,39 +8,39 @@
             <td height="36" align="center" style="background:#f2f2f2;" class="p14cuohuong">报送信息统计</td>
           </tr>
         </table> 
-          <table width="900" border="0" cellspacing="0" cellpadding="0" style="border:1px #999 dashed;">
+          <table width="900" border="0" cellspacing="0" cellpadding="0" style="border:1px #999 solid;">
           <tr>
-            <td height="32" align="center" class="p12hong" style="border-bottom:1px #999 dashed; border-right:1px #CCC dashed;">部门 </td>
-            <td align="center" class="p12hong"  style="border-bottom:1px #999 dashed;border-right:1px #CCC dashed;">发布总数</td>
-            <td align="center" class="p12hong"  style="border-bottom:1px #999 dashed;border-right:1px #CCC dashed;">采用总数</td>
-            <td align="center" class="p12hong"  style="border-bottom:1px #999 dashed;border-right:1px #CCC dashed;">--</td>
-            <td align="center" class="p12hong"  style="border-bottom:1px #999 dashed;border-right:1px #CCC dashed;">人防新闻</td>
-            <td align="center" class="p12hong"  style="border-bottom:1px #999 dashed;border-right:1px #CCC dashed;">防空防灾</td>
-            <td align="center" class="p12hong"  style="border-bottom:1px #999 dashed;border-right:1px #CCC dashed;">交流研讨</td>
-            <td align="center" class="p12hong"  style="border-bottom:1px #999 dashed;border-right:1px #CCC dashed;">人防风采</td>
-            <td align="center" class="p12hong"  style="border-bottom:1px #999 dashed;border-right:1px #CCC dashed;">艺苑天地</td>
-            <td align="center" class="p12hong"  style="border-bottom:1px #999 dashed;border-right:1px #CCC dashed;">今日话题</td>
-            <td align="center" class="p12hong"  style="border-bottom:1px #999 dashed;border-right:1px #CCC dashed;">动漫影像</td>
-            <td align="center" class="p12hong"  style="border-bottom:1px #999 dashed;border-right:1px #CCC dashed;">决策参考</td>
-            <td align="center" class="p12hong"  style="border-bottom:1px #999 dashed;border-right:1px #CCC dashed;">政务公开</td>
+            <td height="32" align="center" class="p12hong" style="border-bottom:1px #999 dashed; border-right:1px #CCC solid;">部门 </td>
+            <td align="center" class="p12hong"  style="border-bottom:1px #999 solid;border-right:1px #CCC solid;">发布总数</td>
+            <td align="center" class="p12hong"  style="border-bottom:1px #999 solid;border-right:1px #CCC solid;">采用总数</td>
+            <td align="center" class="p12hong"  style="border-bottom:1px #999 solid;border-right:1px #CCC solid;">--</td>
+            <td align="center" class="p12hong"  style="border-bottom:1px #999 solid;border-right:1px #CCC solid;">人防新闻</td>
+            <td align="center" class="p12hong"  style="border-bottom:1px #999 solid;border-right:1px #CCC solid;">防空防灾</td>
+            <td align="center" class="p12hong"  style="border-bottom:1px #999 solid;border-right:1px #CCC solid;">交流研讨</td>
+            <td align="center" class="p12hong"  style="border-bottom:1px #999 solid;border-right:1px #CCC solid;">人防风采</td>
+            <td align="center" class="p12hong"  style="border-bottom:1px #999 solid;border-right:1px #CCC solid;">艺苑天地</td>
+            <td align="center" class="p12hong"  style="border-bottom:1px #999 solid;border-right:1px #CCC solid;">今日话题</td>
+            <td align="center" class="p12hong"  style="border-bottom:1px #999 solid;border-right:1px #CCC solid;">动漫影像</td>
+            <td align="center" class="p12hong"  style="border-bottom:1px #999 solid;border-right:1px #CCC solid;">决策参考</td>
+            <td align="center" class="p12hong"  style="border-bottom:1px #999 solid;border-right:1px #CCC solid;">政务公开</td>
                         
             </tr>
             {%for d in data %}
           <tr>
-            <td align="center" class="p12hei2" style="border-bottom:1px #999 dashed; border-right:1px #CCC dashed;"> {{d.name}} </td>
-            <td align="center" class="p12hei2"  style="border-bottom:1px #999 dashed;border-right:1px #CCC dashed;">{{d.sendnum}}</td>
-            <td align="center" class="p12hei2"  style="border-bottom:1px #999 dashed;border-right:1px #CCC dashed;">{{d.anum}}</td>
-            <td align="center" class="p12hei2"  style="border-bottom:1px #999 dashed;border-right:1px #CCC dashed;">-</td>
+            <td align="center" class="p12hei2" style="border-bottom:1px #999 solid; border-right:1px #CCC solid;"> {{d.name}} </td>
+            <td align="center" class="p12hei2"  style="border-bottom:1px #999 solid;border-right:1px #CCC solid;">{{d.sendnum}}</td>
+            <td align="center" class="p12hei2"  style="border-bottom:1px #999 solid;border-right:1px #CCC solid;">{{d.anum}}</td>
+            <td align="center" class="p12hei2"  style="border-bottom:1px #999 solid;border-right:1px #CCC solid;">-</td>
 
-            <td align="center" class="p12hei2"  style="border-bottom:1px #999 dashed;border-right:1px #CCC dashed;">{{d.cy1}}</td>
-            <td align="center" class="p12hei2"  style="border-bottom:1px #999 dashed;border-right:1px #CCC dashed;">{{d.cy2}}</td>
-            <td align="center" class="p12hei2"  style="border-bottom:1px #999 dashed;border-right:1px #CCC dashed;">{{d.cy3}}</td>
-            <td align="center" class="p12hei2"  style="border-bottom:1px #999 dashed;border-right:1px #CCC dashed;">{{d.cy4}}</td>
-            <td align="center" class="p12hei2"  style="border-bottom:1px #999 dashed;border-right:1px #CCC dashed;">{{d.cy5}}</td>
-            <td align="center" class="p12hei2"  style="border-bottom:1px #999 dashed;border-right:1px #CCC dashed;">{{d.cy6}}</td>
-            <td align="center" class="p12hei2"  style="border-bottom:1px #999 dashed;border-right:1px #CCC dashed;">{{d.cy7}}</td>
-            <td align="center" class="p12hei2"  style="border-bottom:1px #999 dashed;border-right:1px #CCC dashed;">{{d.cy8}}</td>
-            <td align="center" class="p12hei2"  style="border-bottom:1px #999 dashed;border-right:1px #CCC dashed;">{{d.cy9}}</td>
+            <td align="center" class="p12hei2"  style="border-bottom:1px #999 solid;border-right:1px #CCC solid;">{{d.cy1}}</td>
+            <td align="center" class="p12hei2"  style="border-bottom:1px #999 solid;border-right:1px #CCC solid;">{{d.cy2}}</td>
+            <td align="center" class="p12hei2"  style="border-bottom:1px #999 solid;border-right:1px #CCC solid;">{{d.cy3}}</td>
+            <td align="center" class="p12hei2"  style="border-bottom:1px #999 solid;border-right:1px #CCC solid;">{{d.cy4}}</td>
+            <td align="center" class="p12hei2"  style="border-bottom:1px #999 solid;border-right:1px #CCC solid;">{{d.cy5}}</td>
+            <td align="center" class="p12hei2"  style="border-bottom:1px #999 solid;border-right:1px #CCC solid;">{{d.cy6}}</td>
+            <td align="center" class="p12hei2"  style="border-bottom:1px #999 solid;border-right:1px #CCC solid;">{{d.cy7}}</td>
+            <td align="center" class="p12hei2"  style="border-bottom:1px #999 solid;border-right:1px #CCC solid;">{{d.cy8}}</td>
+            <td align="center" class="p12hei2"  style="border-bottom:1px #999 solid;border-right:1px #CCC solid;">{{d.cy9}}</td>
 
             </tr>
 
@@ -48,7 +48,7 @@
             {%endfor%}
 
           <tr>
-            <td align="center" class="p12hei2" style="border-bottom:1px #999 dashed; border-right:1px #CCC dashed;" colspan="2">
+            <td align="center" class="p12hei2" style="border-bottom:1px #999 solid; border-right:1px #CCC solid;" colspan="2">
                      <ul class="pager">{{page|raw}}</ul>       
             </td> 
           </tr>              

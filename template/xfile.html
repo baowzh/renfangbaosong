@@ -1,44 +1,64 @@
-{%extends "base.html"%}
-
-{%block content%}
+{%extends "base.html"%} {%block content%}
 
 
-		<table width="817" border="0" cellspacing="0" cellpadding="0" >
-          <tr>
-            <td height="36" align="center" style="background:#f2f2f2;" class="p14cuohuong">信息管理</td>
-          </tr>
-        </table>
-		
-          <table width="817" border="0" cellspacing="0" cellpadding="0" style="border:1px #999 dashed;">
-          <tr>
-            <td height="32" align="center" class="p12hong" style="border-bottom:1px #999 dashed; border-right:1px #CCC dashed;">标题： </td>
-            <td align="center" class="p12hong"  style="border-bottom:1px #999 dashed;border-right:1px #CCC dashed;"> 发送部门 </td>
-            <td align="center" class="p12hong"  style="border-bottom:1px #999 dashed;border-right:1px #CCC dashed;"> 发送时间 </td>
-            <td align="center" class="p12hong"  style="border-bottom:1px #999 dashed;"> 采用 </td>
-            <td align="center" class="p12hong"  style="border-bottom:1px #999 dashed;"> 操作 </td>
-          </tr>
-         {%for d in data %}          
-          <tr>
-            <td align="center" class="p12hei2" style="border-bottom:1px #999 dashed; border-right:1px #CCC dashed;"><a href="{{dv.url("xfile" , "show" , {'id' : d.id})}}">{{d.title}}　</a>　<font color="red">【采用次数：({{d.FileAccept|length}})】</font> </td>
-            <td align="center" class="p12hei2"  style="border-bottom:1px #999 dashed;border-right:1px #CCC dashed;">{{d.Department.name}}</td>
-            <td align="center" class="p12hei2"  style="border-bottom:1px #999 dashed;border-right:1px #CCC dashed;">{{d.post_time}}&nbsp;</td>
-            <td align="center" class="p12hei2"  style="border-bottom:1px #999 dashed;"><a href="{{dv.url("xfile","accept", {'id' : d.id})}}">采用</a></td>
-            <td align="center"  style="border-bottom:1px #999 dashed;"><table width="100" border="0" cellspacing="0" cellpadding="0">
-              <tr>
-                <td align="center" class="p12rl"><a class=fontsize14 href="{{dv.url("xfile","edit",{'id':d.id})}}">修改</a></td>
-                <td align="center" class="p12rl"><a class=fontsize14 href="{{dv.url("xfile","delete",{'id':d.id})}}">删除</a></td>
-              </tr>
-            </table></td>
-          </tr>
-         {%endfor%}
+<table width="817" border="0" cellspacing="0" cellpadding="0">
+	<tr>
+		<td height="36" align="center" style="background: #f2f2f2;"
+			class="p14cuohuong">信息管理</td>
+	</tr>
+</table>
 
-<tr>
-            <td align="center" class="p12hei2" style="border-bottom:1px #999 dashed; border-right:1px #CCC dashed;" colspan="2">
-                     <ul class="pager">{{page|raw}}</ul>       
-            </td> 
-          </tr>              
-		  
-		  
-        </table>
-		
+<table width="817" border="0" cellspacing="0" cellpadding="0"
+	style="border: 1px #999 solid;">
+	<tr>
+		<td height="32" align="center" class="p12hong"
+			style="border-bottom: 1px #999 solid; border-right: 1px #CCC solid;">标题：
+		</td>
+		<td align="center" class="p12hong"
+			style="border-bottom: 1px #999 solid; border-right: 1px #CCC solid;">
+			发送部门</td>
+		<td align="center" class="p12hong"
+			style="border-bottom: 1px #999 solid; border-right: 1px #CCC solid;">
+			发送时间</td>
+		<td align="center" class="p12hong"
+			style="border-bottom: 1px #999 solid;">采用</td>
+		<td align="center" class="p12hong"
+			style="border-bottom: 1px #999 solid;">操作</td>
+	</tr>
+	{%for d in data %}
+	<tr>
+		<td align="center" class="p12hei2"
+			style="border-bottom: 1px #999 solid; border-right: 1px #CCC solid;"><a
+			href="{{dv.url("xfile" , "show" , {'id' :d.id})}}">{{d.title}}
+		</a> <font color="red">【采用次数：({{d.FileAccept|length}})】</font></td>
+		<td align="center" class="p12hei2"
+			style="border-bottom: 1px #999 solid; border-right: 1px #CCC solid;">{{d.Department.name}}</td>
+		<td align="center" class="p12hei2"
+			style="border-bottom: 1px #999 solid; border-right: 1px #CCC solid;">{{d.post_time}}&nbsp;</td>
+		<td align="center" class="p12hei2"
+			style="border-bottom: 1px #999 solid;"><a href="{{dv.url("
+			xfile","accept", {'id' :d.id})}}">采用</a></td>
+		<td align="center" style="border-bottom: 1px #999 solid;"><table
+				width="100" border="0" cellspacing="0" cellpadding="0">
+				<tr>
+					<td align="center" class="p12rl"><a class=fontsize14
+						href="{{dv.url("xfile","edit",{'id':d.id})}}">修改</a></td>
+					<td align="center" class="p12rl"><a class=fontsize14
+						href="{{dv.url("xfile","delete",{'id':d.id})}}">删除</a></td>
+				</tr>
+			</table></td>
+	</tr>
+	{%endfor%}
+
+	<tr>
+		<td align="center" class="p12hei2"
+			style="border-right: 1px #CCC solid;" colspan="2">
+			<ul class="pager">{{page|raw}}
+			</ul>
+		</td>
+	</tr>
+
+
+</table>
+
 {%endblock%}
