@@ -101,7 +101,9 @@ class Model_Xfile extends Model_Base {
 				$xfileModel->send_to = $sendto;
 			}
 			$xfileModel->title = $posts ['title'];
-			$xfileModel->content = $posts ['editor_content'];
+			//$xfileModel->content = $posts ['editor_content'];
+			$xfileModel->content = str_replace("'","",$posts ['editor_content']);
+			//$model->content = str_replace("'","",$post ['editor_content']);
 			$xfileModel->author = $posts ['author'];
 			$xfileModel->is_xfwj = $posts ['xfwj'];
 			$xfileModel->update_time = new Doctrine_Expression ( "NOW()" );
@@ -141,7 +143,7 @@ class Model_Xfile extends Model_Base {
 			$sendto = implode ( ",", $sendto );
 			$model = new DBModel_XFile ();
 			$model->title = $post ['title'];
-			$model->content = $post ['editor_content'];
+			$model->content = str_replace("'","",$post ['editor_content']);
 			$model->author = $post ['author'];
 			$model->is_xfwj = $post ['xfwj'];
 			$model->sendto = $sendto;
@@ -219,7 +221,7 @@ class Model_Xfile extends Model_Base {
 				$model->accept_time = new Doctrine_Expression ( "NOW()" );
 				$model->save ();
 				if ($_POST ['cmscatid'] != 0) {
-					$this->addart ( $_POST ['cmscatid'], $xfile->title, $xfile->content );
+					$this->addart ( $_POST ['cmscatid'], $xfile->title, $xfile->content,$_POST ['xfile_id'] );
 				}
 				$this->redirect ( "xfile", "index" );
 			}
@@ -266,12 +268,12 @@ class Model_Xfile extends Model_Base {
 	 * return '';
 	 * }
 	 */
-	public function addart($catid, $title, $content) { //
-		include '../phpcms/base.php';
+	public function addart($catid, $title, $content,$xfile_id) { //
+		include '../renfangban/phpcms/base.php';
 		$info = array ();
 		$info ['catid'] = $catid;
 		$info ['title'] = $title;
-		$info ['content'] = $content;
+		$info ['content'] =$content ;
 		echo "<pre>";
 		$db_config = pc_base::load_config ( 'database' );
 		pc_base::load_sys_class ( 'mysql', '', 0 );
@@ -303,6 +305,7 @@ class Model_Xfile extends Model_Base {
 		), '', strip_tags ( $info ['content'] ) ), 200 );
 		$info ['username'] = "sumuya";
 		$info ['inputtime'] = '';
+		$info ['acctid'] = $xfile_id;
 		// var_dump($info);
 		// echo "1";
 		if ($db->add_content ( $info ))
